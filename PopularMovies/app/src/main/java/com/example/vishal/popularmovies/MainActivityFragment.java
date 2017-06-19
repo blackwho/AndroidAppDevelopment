@@ -65,7 +65,7 @@ public class MainActivityFragment extends Fragment {
     final String PAGE_PARAM = "page";
 
 
-    final String API_KEY_VALUE = "4d68386fdfbb718a8c36cc1c1053c82e";
+    final String API_KEY_VALUE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     final String LANGUAGE_PARAM_VALUE = "en-US";
     final String PAGE_PARAM_VALUE = "1";
 
