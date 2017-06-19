@@ -65,12 +65,13 @@ public class MainActivityFragment extends Fragment {
     final String PAGE_PARAM = "page";
 
 
-    final String API_KEY_VALUE = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    final String API_KEY_VALUE = "4d68386fdfbb718a8c36cc1c1053c82e";
     final String LANGUAGE_PARAM_VALUE = "en-US";
     final String PAGE_PARAM_VALUE = "1";
 
 
     ArrayList<Movie> mMovieList ;
+    ArrayList<Movie> dataMovieList;
 
     public MainActivityFragment() {
     }
@@ -87,6 +88,8 @@ public class MainActivityFragment extends Fragment {
             mMovieList = new ArrayList<Movie>();
         }else{
             mMovieList = savedInstanceState.getParcelableArrayList("movies");
+            Log.i ("mMovieList", mMovieList.size() + "");
+
 
         }
 
@@ -114,6 +117,9 @@ public class MainActivityFragment extends Fragment {
         // so the list can be populated in the user interface
         mgridView.setAdapter(mMovieAdapter);
 
+        Log.i ("mMovieList", mMovieList.size() + "");
+
+
 
         if(mMovieList.isEmpty()) {
            loadMovieData(BASE_URL);
@@ -140,6 +146,8 @@ public class MainActivityFragment extends Fragment {
                 myIntent.putExtra("overView", mOverView);
 
                 getActivity().startActivity(myIntent);
+                mLoadOnBackToMainActivityFragmentDetector = true;
+
 
             }
         });
@@ -151,11 +159,11 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         Log.v("checking","onSaveInstanceState()");
-
-        Log.v("checking...", "size:" +mMovieList.size());
-
         outState.putParcelableArrayList("movies", mMovieList);
+        Log.i ("mMovieList", mMovieList.size() + "");
         super.onSaveInstanceState(outState);
+
+
     }
 
     public class GetMovieDataInBackground extends AsyncTask<String, Void, List<Movie> >{
@@ -205,6 +213,7 @@ public class MainActivityFragment extends Fragment {
         protected void onPostExecute(List<Movie> data){
 
             if(data != null && !data.isEmpty()){
+                mMovieAdapter.clear();
                 mMovieAdapter.addAll(data);
                 setNothing();
 //                mMovieAdapter.clear();
@@ -298,6 +307,9 @@ public class MainActivityFragment extends Fragment {
 
         }
 
+        Log.i ("mMovieList", mMovieList.size() + "");
+
+
 
     }
 
@@ -305,6 +317,8 @@ public class MainActivityFragment extends Fragment {
     public void onPause(){
         super.onPause();
         Log.v("checking...","onPause()");
+        Log.i ("mMovieList", mMovieList.size() + "");
+
     }
 
 
@@ -313,7 +327,9 @@ public class MainActivityFragment extends Fragment {
     public void onStop(){
         super.onStop();
         Log.v("checking...","onStop()");
-        mMovieAdapter.clear();
+//        mMovieAdapter.clear();
+        Log.i ("mMovieList", mMovieList.size() + "");
+
 
         //mMovieAdapter.clear();
     }
@@ -321,15 +337,21 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onDestroy(){
         super.onDestroy();
-        mMovieAdapter.clear();
         Log.v("checking...","onDestroy()");
+//        mMovieAdapter.clear();
+        Log.i ("mMovieList", mMovieList.size() + "");
+
+
+
 
     }
     @Override
     public void onDetach(){
         super.onDetach();
-        mMovieAdapter.clear();
         Log.v("checking...","onDetach()");
+        Log.i ("mMovieList", mMovieList.size() + "");
+
+
     }
 
 
