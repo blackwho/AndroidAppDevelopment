@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <!--<string name="action_settings">Settings</string>-->
+
+    <!-- Settings Menu Item [CHAR LIMIT=NONE] -->
+    <string name="settings_menu_item">Settings</string>
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <string name="settings_title">Movie Settings</string>
+
+
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_popular_value</string>
+
+    <!-- Label for order-by Latest option [CHAR LIMIT=20] -->
+    <!--<string name="settings_order_by_latest_label">Latest</string>-->
+    <!--<string name="settings_order_by_latest_value" translatable="false">latest?</string>-->
+
+    <!-- Label for order-by Now Playing option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_nowPlaying_label">Now Playing</string>
+    <string name="settings_order_by_nowPlaying_value" translatable="false">now_playing?</string>
+
+
+    <string name="settings_order_by_popular_label">Popular</string>
+    <string name="settings_order_by_popular_value" translatable="false">popular?</string>
+
+
+    <string name="settings_order_by_topRated_label">Top Rated</string>
+    <string name="settings_order_by_topRated_value" translatable="false">top_rated?</string>
+
+
+
+    <!-- Label for order-by upcoming movie option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_upcoming_label">Upcoming</string>
+    <string name="settings_order_by_upcoming_value" translatable="false">upcoming?</string>
+
+
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="no_movie_data">No movie data found</string>
+
+    <string name="release_date">Release Date</string>
+    <string name="vote_average">User Rating</string>
+
+    <string name="desc">Description</string>
+</resources>
