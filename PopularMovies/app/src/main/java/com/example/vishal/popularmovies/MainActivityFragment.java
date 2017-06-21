@@ -295,6 +295,7 @@ public class MainActivityFragment extends Fragment {
         if(!value){
 
             mMovieAdapter.clear();
+            setNothing();
             mMovieAdapter.addAll(mMovieList);
         }
         value = false;

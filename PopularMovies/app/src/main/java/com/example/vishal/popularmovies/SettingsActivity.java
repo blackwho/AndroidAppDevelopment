@@ -8,6 +8,8 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.prefs.PreferenceChangeListener;
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-    public static class MoviePreferenceFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener{
+    public static class MoviePreferenceFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
