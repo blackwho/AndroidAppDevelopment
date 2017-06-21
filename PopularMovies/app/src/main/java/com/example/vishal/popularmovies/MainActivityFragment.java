@@ -186,7 +186,7 @@ public class MainActivityFragment extends Fragment {
 
 
             String stringUri = params[0];
-            stringUri = stringUri + sortBy;
+            stringUri = stringUri + sortBy + "?";
 
             Log.v("checking...", "stringUri" +stringUri);
 
